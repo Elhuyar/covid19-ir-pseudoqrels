@@ -40,19 +40,21 @@ All Python dependencies are automatically installed by creating a virtual enviro
 
 Building the document index requires antlr2.7.7 and compiling INDRI with the following configure command:
 
+```shell
 CXXFLAGS=-std=c++17 ./configure --with-antlr=/usr/local/antlr2
+```
 
 However if compiled so, IndriBuildIndex command works and index is built correctly, but pyndri fails to import indri library. So in orderr to make pyndri work, once the index is built Indri must be recompiled with the following configure command:
 
+```shell
 ./configure CXX="g++ -D_GLIBCXX_USE_CXX11_ABI=0"
-
-
+```
 Therefore there are two versions of Indri. We installed the one used by pyndri to acces the index in the default path, while the one used to build indexes was kept in our home "/home/youruser/indri-5.17" (the reason is the index is built only once). Hence in order to build an index do as follows:
 
+```shell
 $cd /home/youruser/indri-5.17 
 $./buildindex/IndriBuildIndex /path/your/indri/parameter.file
-
-
+```
 
 # Pseudo training datasets
 
@@ -77,9 +79,9 @@ The following datasets are made available
 Scripts order:
 
 1 - Filter papers talking about covid-19:
-'''shell
+```shell
 src/filter_dataset_with_kwords.py
-'''
+```
 
 2 - Fine-tuning models:
 
@@ -87,9 +89,10 @@ Fine tuning is done using google BERT original code
 
 3 - Fine tuning for passage reranking
 3.1 - Prepare dataset for finetuning:
-'''shell
+```shell
 src/createPassagePseuTrain-reranking.py
-'''
+```
+
 3.2 - Finetuning
 
 4 - Index collections with Indri
@@ -103,4 +106,28 @@ src/createPassagePseuTrain-reranking.py
 # Citations
 
 If you use any of the resources provided by this repository please cite the following paper:
+
+
+* Saralegi X., San Vicente I. (2021) Fine-Tuning BERT for COVID-19 Domain Ad-Hoc IR by Using Pseudo-qrels. In: Hiemstra D., Moens MF., Mothe J., Perego R., Potthast M., Sebastiani F. (eds) Advances in Information Retrieval. ECIR 2021. Lecture Notes in Computer Science, vol 12657. Springer, Cham. https://doi.org/10.1007/978-3-030-72240-1_38 
+
+```shell
+@InProceedings{10.1007/978-3-030-72240-1_38,
+author="Saralegi, Xabier
+and San Vicente, I{\~{n}}aki",
+editor="Hiemstra, Djoerd
+and Moens, Marie-Francine
+and Mothe, Josiane
+and Perego, Raffaele
+and Potthast, Martin
+and Sebastiani, Fabrizio",
+title="Fine-Tuning BERT for COVID-19 Domain Ad-Hoc IR by Using Pseudo-qrels",
+booktitle="Advances in  Information Retrieval",
+year="2021",
+publisher="Springer International Publishing",
+address="Cham",
+pages="376--383",
+abstract="This work analyzes the feasibility of training a neural retrieval system for a collection of scientific papers about COVID-19 using pseudo-qrels extracted from the collection. We propose a method for generating pseudo-qrels that exploits two characteristics present in scientific articles: a) the relationship between title and abstract, and b) the relationship between articles through sentences containing citations. Through these signals we generate pseudo-queries and their respective pseudo-positive (relevant documents) and pseudo-negative (non-relevant documents) examples. The article retrieval process combines a ranking model based on term-maching techniques and a neural one based on pretrained BERT models. BERT models are fine-tuned to the task using the pseudo-qrels generated. We compare different BERT models, both open domain and biomedical domain, and also the generated pseudo-qrels with the open domain MS-Marco dataset for fine-tuning the models. The results obtained on the TREC-COVID collection show that pseudo-qrels provide a significant improvement to neural models, both against classic IR baselines based on term-matching and neural systems trained on MS-Marco.",
+isbn="978-3-030-72240-1"
+}
+```
 
