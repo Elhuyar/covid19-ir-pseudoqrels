@@ -134,6 +134,7 @@ isbn="978-3-030-72240-1"
 # Acknowledgements
 
 This work has been partially funded by VIGICOVID project\footnote{\url{http://nlp.uned.es/vigicovid-project}} FSuperaCovid-5 (Fondo Supera COVID-19 / CRUE-CSIC-Santander)
+
 All reranking models were trained on V3-8 TPUs thanks to the support of the TRFC program.
 
 
