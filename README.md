@@ -60,16 +60,16 @@ $./buildindex/IndriBuildIndex /path/your/indri/parameter.file
 
 The following datasets are made available
 
-* title: [Title-abstract dataset (1:2 positive:negative ratio) https://storage.googleapis.com/elhuyar/datasets/titles_1%3A2_cord19-20200719.tsv.gz]
+* title: [Title-abstract dataset (1:2 positive:negative ratio)](https://storage.googleapis.com/elhuyar/datasets/titles_1%3A2_cord19-20200719.tsv.gz)
 
-* cites: [sentence-citedAbstract dataset (1:2 positive:negative ratio) https://storage.googleapis.com/elhuyar/datasets/cites_1%3A2_cord19-20200719.tsv.gz]
+* cites: [sentence-citedAbstract dataset (1:2 positive:negative ratio)](https://storage.googleapis.com/elhuyar/datasets/cites_1%3A2_cord19-20200719.tsv.gz)
 
 
 # Reranking models
 
-* [Clinical Bert (CBERT) fine-tuned on title dataset https://storage.googleapis.com/elhuyar/models/cbert-cord19-silver2.tgz]:
-* [Clinical Bert (CBERT) fine-tuned on cites dataset https://storage.googleapis.com/elhuyar/models/cbert-cord19-cites2.tgz]:
-* [Clinical Bert (CBERT) fine-tuned on title+sites combined dataset https://storage.googleapis.com/elhuyar/models/cbert-cord19-silver2-cites2.tgz]: 
+* [Clinical Bert (CBERT) fine-tuned on title dataset](https://storage.googleapis.com/elhuyar/models/cbert-cord19-silver2.tgz):
+* [Clinical Bert (CBERT) fine-tuned on cites dataset](https://storage.googleapis.com/elhuyar/models/cbert-cord19-cites2.tgz):
+* [Clinical Bert (CBERT) fine-tuned on title+sites combined dataset](https://storage.googleapis.com/elhuyar/models/cbert-cord19-silver2-cites2.tgz): 
 
 
 
@@ -133,9 +133,9 @@ isbn="978-3-030-72240-1"
 
 # Acknowledgements
 
-This work has been partially funded by [VIGICOVID project http://nlp.uned.es/vigicovid-project] FSuperaCovid-5 (Fondo Supera COVID-19 / CRUE-CSIC-Santander)
+This work has been partially funded by [VIGICOVID project](http://nlp.uned.es/vigicovid-project) FSuperaCovid-5 (Fondo Supera COVID-19 / CRUE-CSIC-Santander)
 
-All reranking models were trained on V3-8 TPUs thanks to the support of the [TRFC https://sites.research.google/trc/about/] program.
+All reranking models were trained on V3-8 TPUs thanks to the support of the [TRFC](https://sites.research.google/trc/about/) program.
 
 
 
